@@ -6,6 +6,8 @@
 
 <h1>Index</h1>
 
+<h2>@TempData["MENSAJE"]</h2>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -42,7 +44,7 @@
                <img src="@item.Imagen" style="width:300px;height:200px" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                <a asp-controller="Productos" asp-action="SeleccionarFavorito" asp-route-id="@item.IdProducto">Favoritos</a>|
                 @Html.ActionLink("Details", "Details", new { id=item.IdProducto }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
